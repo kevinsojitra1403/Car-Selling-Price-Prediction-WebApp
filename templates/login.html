@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login page</title>
+    <style>
+      @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+      .login-box{
+        width: 300px;
+        background-color: white;
+        width: 400px;
+        height: 510px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: black;
+        border-radius: 20px;
+        padding: 10px 10px;
+      }
+      .login-box h1{
+        float: left;
+        font-size: 40px;
+        border-bottom: 6px solid #2D219B;
+        position: relative;
+        top: -5%;
+        padding: 8px;
+      }
+      .textbox{
+        width: 100%;
+        overflow: hidden;
+        font-size: 20px;
+        padding: 8px;
+        position: relative;
+        top: -5%;
+      }
+      .textbox i{
+        width: 5%;
+        position: relative;
+        top: -5%;
+      }
+      .textbox input{
+        border: none;
+        border-bottom: 2px solid #2D219B;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        width: 95%;
+        box-sizing: border-box;
+      }
+      .btn {
+        border-radius: 10px;
+        background-color: #2D219B;
+        position: relative;
+        left:30%;
+        top:4%;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        width: 150px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      /* animation for button 1(sign-in button)*/
+      .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .btn span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .btn:hover span {
+        padding-right: 25px;
+      }
+      .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .btn:active {
+        background-color: #02AE97;
+        box-shadow: 0 5px #02AE100;
+        transform: translateY(4px);
+      }
+      p{
+        font-size: 16px;
+        font-family:arial;
+        text-align:center;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body style="background-image: linear-gradient(to left, #ff0084, #c7016a, #920150, #600135, #33001b);">
+  <form action="/home">
+    <div class="login-box">
+      <h1>Login</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" required/>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-envelope"></i>
+        <input type="text" placeholder="email" required/>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      </div>
+      <script>
+        var myInput = document.getElementById("psw");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function() {
+           document.getElementById("message").style.display = "block";
+        }
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function() {
+           document.getElementById("message").style.display = "none";
+        }
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() {
+
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+             letter.classList.remove("invalid");
+             letter.classList.add("valid");
+          }
+          else {
+             letter.classList.remove("valid");
+             letter.classList.add("invalid");
+          }
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(myInput.value.match(upperCaseLetters)) {
+             capital.classList.remove("invalid");
+             capital.classList.add("valid");
+          }
+          else {
+             capital.classList.remove("valid");
+             capital.classList.add("invalid");
+          }
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {
+             number.classList.remove("invalid");
+             number.classList.add("valid");
+          }
+          else {
+             number.classList.remove("valid");
+             number.classList.add("invalid");
+          }
+          // Validate length
+          if(myInput.value.length >= 8) {
+             length.classList.remove("invalid");
+             length.classList.add("valid");
+          }
+          else {
+             length.classList.remove("valid");
+             length.classList.add("invalid");
+          }
+        }
+      </script>
+      <form action="/home">
+        <input type="submit" class="btn" value="Sign in">
+      </form>
+      <form action ="/register">
+        <br><p>Don't have an account?</p>
+        <input type="submit" class="btn" value="register">
+      </form>
+    </div>
+  </form>
+  </body>
+</html>
+
+
+

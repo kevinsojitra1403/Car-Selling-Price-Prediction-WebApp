@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="" xmlns="" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <style>
+       body {
+          margin: 10px;
+          padding: 10px;
+          background-size: cover;
+          background-attachment:fixed;
+          text-align: center;
+       }
+       .card-1 {
+          background-color: off-white;
+          perspective: 1000px;
+          background-color: white;
+          width: 400px;
+          height: 500px;
+          position: absolute;
+          top: 50%;
+          left: 38%;
+          transform: translate(-50%,-50%);
+          color: black;
+          border-radius: 20px;
+          padding: 10px 10px;
+      }
+       .card-2 {
+          background-color: white;
+          perspective: 1000px;
+          background-color: white;
+          width: 400px;
+          height: 500px;
+          position: absolute;
+          top: 50%;
+          left: 61%;
+          transform: translate(-50%,-50%);
+          color: black;
+          border-radius: 20px;
+          padding: 10px 10px;
+      }
+
+       #research {
+          font-size: 18px;
+          color: black;
+          width: 100px;
+          height: 23px;
+          top: 23px;
+       }
+       box{
+          width: 50px;
+          margin: 50px;
+          background-color: #ffffff;
+          border: 5px solid black;
+          opacity: 1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: white;
+      }
+       .textbox{
+          width: 100%;
+          overflow: hidden;
+          font-size: 20px;
+          padding: 8px 0;
+          margin: 8px 0;
+          border-bottom: 1px solid #4caf50;
+       }
+       .textbox i{
+          width: 26px;
+          float: left;
+          text-align: center;
+       }
+       .textbox input{
+          border: none;
+          outline: none;
+          background: none;
+          color: white;
+          font-size: 18px;
+          width: 80%;
+          float: left;
+          margin: 0 10px;
+       }
+       #fuel {
+          width: 83px;
+          height: 43px;
+          text-align: center;
+          border-radius: 14px;
+          font-size: 20px;
+          background: #2D219B;
+          color: white;
+       }
+       #fuel:hover {
+          background-color: coral;
+       }
+       #research {
+            width: 99px;
+            height: 43px;
+             text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: #2D219B;
+            color: white;
+       }
+       #research:hover {
+            background-color: coral;
+       }
+       #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            color: white;
+            background-color: #2D219B;
+       }
+       #resea:hover {
+            background-color: #02AE97;
+       }
+       #sub {
+            width: 120px;
+            height: 53px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: #2D219B;
+            color: white;
+
+       }
+       #sub:hover {
+            background-color: #02AE97;
+       }
+       #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+       }
+       #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+       }
+       #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+       }
+       #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+       }
+       #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+       }
+       p{
+         text-align: center;
+         font-size: 20px;
+         font-family: italic;
+         text-align:center;
+         position: relative;
+         color:black;
+       }
+       h1{
+         font-size: 35px;
+         font-family: italic;
+         color: coral;
+         text-align:center;
+         position: relative;
+         top:5%;
+       }
+       h2{
+         font-size: 35px;
+         font-family: italic;
+         color: coral;
+         position: relative;
+         top: 525px;
+       }
+       .button3 {
+         background-color: #2D219B;
+         border: none;
+         color: white;
+         padding: 10px;
+         width: 150px;
+         position:absolute;
+         top:50px;
+         left:-30px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         border-radius:20px;
+       }
+       /* Animation for Button3 (Back)*/
+       .button3 span {
+         cursor: pointer;
+         display: inline-block;
+         position: relative;
+         transition: 0.5s;
+       }
+       .button3 span:after {
+         content: '\00bb';
+         position: absolute;
+         opacity: 0;
+         top: 0;
+         left: -20px;
+         transition: 0.5s;
+       }
+       .button3:hover span {
+         padding-left: 25px;
+       }
+       .button3:hover span:after {
+         opacity: 1;
+         left: 0;
+       }
+       .button3:active {
+         background-color: #02AE97;
+         box-shadow: 0 5px #02AE100;
+         transform: translateY(4px);
+       }
+    </style>
+</head>
+ <body style="background-image: linear-gradient(to left, #ff0084, #c7016a, #920150, #600135, #33001b);">
+ <h1>Predictive Analysis</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="card-1">
+               <p>Enter Name Of The Car</p><input id="first" name="name" type="text" required="required">
+                <p>how old the car is in terms of year</p><input id="second" name="Year" type="number" min="0" required="required">
+                <p>Showroom Price?(In lakhs)</p><input id="third" type="number" name="Present_Price" min="0" required="required">
+                <p>Kilometers Driven</p><input id="fourth" type="number" name="Kms_Driven" min="0" required="required">
+                <p>Number of Owners?</p><input id="fifth" type="number" name="Owner" min="0" required="required">
+            </div>
+            <div class="card-2">
+                <p>What Is the Fuel type?</p><br>
+                <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Diesel">CNG</option>
+                </select>
+                <p>Are you A Dealer or Individual</p><br>
+                <select name="Seller_Type_Individual" id="resea" required="required">
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select>
+                <p>Transmission type</p><br>
+                <select name="Transmission_Mannual" id="research" required="required">
+                    <option value="Mannual">Manual Car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select>
+                <br><br><br><button id="sub" type="submit"><span>Calculate S.P</span></button>
+            </div>
+            <h2>{{ prediction_text }}</h2>
+        </form>
+        <form action="/home" method="get">
+           <button class="button3"><span>back</span></button>
+        </form>
+ </body>
+</html>
+

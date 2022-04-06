@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact-Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .center {
+        border: 5px solid white;
+        padding: 10px;
+      }
+      .body{
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+      }
+      .card {
+        background-color: white;
+        width: 500px;
+        height: 550px;
+        perspective: 1000px;
+        position:absolute;
+        left:900px;
+        top:80px;
+        border-radius:12px;
+      }
+      input[type=text] {
+        border: none;
+        border-bottom: 2px solid #2D219B;
+      }
+      /* Style inputs with type="text", select elements and textarea */
+      input[type=text], select, textarea {
+        width: 95%; /* Full width */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        margin-left:15px;
+        border-bottom: 2px solid #2D219B;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        resize: none; /* Allow the user to vertically resize the textarea (not horizontally) */
+      }
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 20px 20px;
+        border: none;
+        border-bottom: 2px solid #2D219B;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      /* Style the submit button with a specific background color etc */
+      .button {
+        background-color: #2D219B;
+        border: none;
+        color: white;
+        padding: 10px;
+        width: 100px;
+        position: relative;
+        left:320px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius:10px;
+      }
+      /* animation for button 1(send button)*/
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .button:hover span {
+        padding-right: 25px;
+      }
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .button:active {
+        background-color: #02AE97;
+        box-shadow: 0 5px #02AE100;
+        transform: translateY(4px);
+      }
+      .button2 {
+        background-color: #2D219B;
+        border: none;
+        color: white;
+        padding: 10px;
+        width: 100px;
+        position: relative;
+        left: -50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius:10px;
+      }
+      /* Animation for Button2 (reset)*/
+      .button2 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .button2 span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: -20px;
+        transition: 0.5s;
+      }
+      .button2:hover span {
+        padding-left: 25px;
+      }
+      .button2:hover span:after {
+        opacity: 1;
+        left: 0;
+      }
+      .button2:active {
+        background-color: #02AE97;
+        box-shadow: 0 5px #02AE100;
+        transform: translateY(4px);
+      }
+      .button3 {
+        background-color: #2D219B;
+        border: none;
+        color: white;
+        padding: 10px;
+        width: 150px;
+        position:absolute;
+        top:500px;
+        left:-940px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius:20px;
+      }
+      /* Animation for Button3 (Back)*/
+      .button3 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .button3 span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: -20px;
+        transition: 0.5s;
+      }
+      .button3:hover span {
+        padding-left: 25px;
+      }
+      .button3:hover span:after {
+        opacity: 1;
+        left: 0;
+      }
+      .button3:active {
+        background-color: #02AE97;
+        box-shadow: 0 5px #02AE100;
+        transform: translateY(4px);
+      }
+      label{
+        position:relative;
+        left:200px;
+        font-family: italic;
+        font-size: 20px;
+      }
+      H1{
+        position:relative;
+        left:80px;
+        font-family: italic;
+        font-size:40px;
+        Color: black;
+      }
+      .box i{
+        width: 5%;
+        position: relative;
+        left: 50px;
+      }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to left, #ff0084, #c7016a, #920150, #600135, #33001b);">
+ <div class="box">
+    <p style="color:coral;font-family:italic;font-size:80px;text-align:center;position:absolute;left:250px;top:10px">Contact-Us</p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position :absolute; top:250px;left:150px;">Plot No.10, Sector 16</p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position :absolute; top:280px;left:150px;">New Panvel, Navi Mumbai<p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position :absolute; top:310px;left:150px;">Maharashtra 410206</p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position:absolute;top:390px;left:150px;"> <i class="fas fa-envelope"></i>E-mail address</p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position:absolute;top:420px;left:150px;"> sks19@student.mes.ac.in / pcacs@mes.ac.in</p>
+    <p style="color:white;font-family:times new roman;font-size:20px;position:absolute;top:450px;left:150px;">Contact us <a href="mailto:pcacs.mes.ac.in.?subject=subject&cc=pcacs.mes.ac.in">send us a mail</a></p><br>
+    <p style="color:white;font-family:times new roman;font-size:20px;position:absolute;top:510px;left:150px;"><i class="fas fa-address-book-o"></i>Ph no.: +91-022-2745-1700</p>
+ </div>
+ <div class="card">
+    <form method="get" enctype="multipart/form-data" onsubmit="send" >
+        <H1>Send Us A Message..</H1>
+        <label for="fname">First Name</label>
+           <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
+        <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
+        <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email.." required="required">
+        <label for="subject">Subject</label>
+           <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+        <button class="button" type="submit" onclick="message()"><span>send</span></button>
+        <script>
+            function message()
+             {
+              alert("message sent successfully") ;
+              window.location.assign(contact.html )
+             }
+        </script>
+        <button class="button2" type="reset"><span>reset</span></button>
+    </form>
+    <form action="/home" method="get">
+        <button class="button3"><span>back</span></button>
+            </form>
+    </div>
+</body>
+</html>
